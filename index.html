@@ -1,0 +1,4310 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Naija HealthCare | Support, Learn & Stay Healthy</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5faf7;
+  color: #183028;
+  line-height: 1.6;
+}
+
+section {
+  padding: 80px 6%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 6%;
+
+  background: rgba(255,255,255,0.97);
+
+  border-bottom: 1px solid #e1e9e5;
+
+  box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #087f45;
+}
+
+.logo span {
+  color: #183028;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #183028;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  color: #087f45;
+}
+
+.nav-donate {
+  background: #087f45;
+  color: white !important;
+  padding: 9px 14px;
+  border-radius: 7px;
+}
+
+.menu-btn {
+  display: none;
+  border: 0;
+  border-radius: 7px;
+  background: #087f45;
+  color: white;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  min-height: 720px;
+
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+
+  gap: 50px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      rgba(0,70,40,.82),
+      rgba(0,95,55,.75)
+    ),
+    url("https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=2000&q=85");
+
+  background-size: cover;
+  background-position: center;
+
+  padding: 100px 6%;
+}
+
+.hero h1 {
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 1.04;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #b9f3d2;
+  display: block;
+}
+
+.hero p {
+  max-width: 680px;
+  color: #edf8f2;
+  margin-bottom: 25px;
+  font-size: 1.08rem;
+}
+
+.hero-label {
+  color: #c9f5da !important;
+  font-weight: 800;
+  margin-bottom: 10px !important;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+
+  border: 0;
+  border-radius: 8px;
+
+  padding: 13px 20px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: #087f45;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #066938;
+}
+
+.btn-white {
+  background: white;
+  color: #087f45;
+}
+
+.btn-secondary {
+  background: #e8f7ef;
+  color: #087f45;
+}
+
+.hero-card {
+  background: rgba(255,255,255,.97);
+  color: #183028;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 20px 50px rgba(0,30,20,.25);
+}
+
+.hero-card h3 {
+  color: #087f45;
+  margin-bottom: 15px;
+}
+
+.stat {
+  padding: 16px 0;
+  border-bottom: 1px solid #e6ece9;
+}
+
+.stat:last-child {
+  border-bottom: 0;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.5rem;
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.section-title {
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto 42px;
+}
+
+.section-title h2 {
+  color: #123c2d;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: #687871;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+}
+
+.card {
+  background: white;
+
+  border: 1px solid #dfe9e4;
+
+  border-radius: 14px;
+
+  padding: 25px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,.04);
+
+  transition: .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,60,35,.08);
+}
+
+.card h3 {
+  color: #173b30;
+  margin: 10px 0;
+}
+
+.card p {
+  color: #687871;
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: #e8f7ef;
+
+  font-size: 1.5rem;
+}
+
+.tag {
+  display: inline-block;
+
+  background: #eef5f1;
+
+  border-radius: 20px;
+
+  padding: 5px 9px;
+
+  margin: 4px 2px;
+
+  font-size: .78rem;
+}
+
+.verified {
+  color: #087f45;
+  font-weight: 700;
+  font-size: .85rem;
+}
+
+
+/* =========================================================
+   BACKGROUND SECTIONS
+========================================================= */
+
+.impact-section {
+  background:
+    linear-gradient(
+      rgba(245,250,247,.95),
+      rgba(245,250,247,.95)
+    ),
+    url("https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1800&q=80");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.courses-section {
+  background:
+    linear-gradient(
+      rgba(235,248,241,.95),
+      rgba(255,255,255,.97)
+    ),
+    url("https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1800&q=80");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.tutors-section {
+  background:
+    linear-gradient(
+      rgba(255,255,255,.95),
+      rgba(238,248,243,.95)
+    ),
+    url("https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1800&q=80");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.schools-section {
+  background:
+    linear-gradient(
+      rgba(238,249,243,.95),
+      rgba(255,255,255,.97)
+    ),
+    url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=80");
+
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* =========================================================
+   DONATIONS
+========================================================= */
+
+.donation {
+  color: white;
+
+  background:
+    linear-gradient(
+      rgba(0,95,53,.94),
+      rgba(0,85,48,.94)
+    ),
+    url("https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1800&q=80");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.donation .section-title h2,
+.donation .section-title p {
+  color: white;
+}
+
+.donation-box {
+  max-width: 760px;
+
+  margin: auto;
+
+  background: white;
+
+  color: #183028;
+
+  padding: 30px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,.18);
+}
+
+.amounts {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.amount {
+  border: 1px solid #ccd9d2;
+  background: white;
+  padding: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.amount:hover,
+.amount.selected {
+  border-color: #087f45;
+  background: #e8f7ef;
+  color: #087f45;
+}
+
+
+/* =========================================================
+   FORMS
+========================================================= */
+
+.form-box {
+  max-width: 800px;
+  margin: auto;
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 15px;
+
+  border: 1px solid #e0e9e4;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+label {
+  font-weight: 700;
+  font-size: .9rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+
+  padding: 13px;
+
+  margin-top: 7px;
+  margin-bottom: 15px;
+
+  border: 1px solid #ccd8d2;
+
+  border-radius: 8px;
+
+  background: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #a9dfc2;
+}
+
+
+/* =========================================================
+   COURSES
+========================================================= */
+
+.course-price {
+  color: #087f45;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 15px 0;
+}
+
+.course-list {
+  list-style: none;
+  margin: 15px 0;
+}
+
+.course-list li {
+  margin: 7px 0;
+}
+
+
+/* =========================================================
+   SCHOOL SEARCH
+========================================================= */
+
+.school-search {
+  max-width: 900px;
+
+  margin: 0 auto 35px;
+
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 12px;
+}
+
+.school-search input,
+.school-search select {
+  margin: 0;
+}
+
+.school-card.hidden {
+  display: none;
+}
+
+.school-info {
+  max-width: 900px;
+
+  margin: 40px auto 0;
+
+  padding: 25px;
+
+  background: white;
+
+  border-left: 5px solid #087f45;
+
+  border-radius: 10px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz-section {
+  background:
+    linear-gradient(
+      rgba(238,248,243,.96),
+      rgba(255,255,255,.97)
+    ),
+    url("https://images.unsplash.com/photo-1602052577122-f73b9710adba?auto=format&fit=crop&w=1800&q=80");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.quiz-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.quiz {
+  background: white;
+
+  border: 1px solid #dce7e1;
+
+  border-radius: 18px;
+
+  padding: 30px;
+
+  box-shadow: 0 12px 35px rgba(0,0,0,.07);
+}
+
+.quiz-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 18px;
+}
+
+.quiz-badge {
+  background: #e8f7ef;
+
+  color: #087f45;
+
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  font-weight: 700;
+
+  font-size: .85rem;
+}
+
+.quiz-score {
+  font-weight: 700;
+}
+
+.progress-background {
+  height: 10px;
+
+  background: #e4ebe7;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  margin-bottom: 28px;
+}
+
+.progress-bar {
+  height: 100%;
+
+  width: 0%;
+
+  background: #087f45;
+
+  transition: width .3s;
+}
+
+#quiz-question {
+  color: #123c2d;
+
+  font-size: 1.35rem;
+
+  margin-bottom: 20px;
+}
+
+.quiz-options {
+  display: grid;
+
+  gap: 10px;
+}
+
+.quiz-option {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px;
+
+  border: 1px solid #d6e1dc;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+.quiz-option:hover {
+  background: #f0f8f4;
+
+  border-color: #087f45;
+}
+
+.quiz-option input {
+  width: auto;
+  margin: 0;
+}
+
+.quiz-option.correct {
+  background: #e8f7ef;
+  border-color: #087f45;
+}
+
+.quiz-option.wrong {
+  background: #fff5df;
+  border-color: #d18a00;
+}
+
+.quiz-feedback {
+  display: none;
+
+  padding: 15px;
+
+  margin-top: 18px;
+
+  border-radius: 9px;
+}
+
+.quiz-feedback.show {
+  display: block;
+}
+
+.quiz-feedback.good {
+  background: #e8f7ef;
+  color: #075c32;
+}
+
+.quiz-feedback.bad {
+  background: #fff5df;
+  color: #765000;
+}
+
+.quiz-controls {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-top: 24px;
+}
+
+.next-btn {
+  display: none;
+}
+
+.quiz-result {
+  display: none;
+
+  text-align: center;
+
+  padding: 30px;
+}
+
+.final-score {
+  font-size: 2.5rem;
+
+  font-weight: 800;
+
+  color: #087f45;
+
+  margin: 15px;
+}
+
+.quiz-stats {
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 10px;
+
+  margin: 25px 0;
+}
+
+.quiz-stat {
+  background: #f1f7f4;
+
+  padding: 15px;
+
+  border-radius: 10px;
+}
+
+.quiz-stat strong {
+  display: block;
+
+  font-size: 1.4rem;
+
+  color: #087f45;
+}
+
+
+/* =========================================================
+   DAILY NOTICES
+========================================================= */
+
+.notices-section {
+  background:
+    linear-gradient(
+      rgba(255,255,255,.96),
+      rgba(244,250,247,.96)
+    ),
+    url("https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1800&q=80");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.notice-controls {
+  max-width: 1000px;
+
+  margin: 0 auto 30px;
+
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 12px;
+}
+
+.notice-controls input,
+.notice-controls select {
+  margin: 0;
+}
+
+.notice-date {
+  max-width: 1000px;
+
+  margin: 0 auto 20px;
+
+  padding: 15px 18px;
+
+  border-radius: 10px;
+
+  background: #e8f7ef;
+
+  color: #075c32;
+
+  font-weight: 700;
+}
+
+.notice-grid {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 15px;
+}
+
+.notice {
+  background: white;
+
+  padding: 20px;
+
+  border-left: 5px solid #087f45;
+
+  border-radius: 9px;
+
+  box-shadow: 0 5px 18px rgba(0,0,0,.05);
+}
+
+.notice h3 {
+  color: #173b30;
+
+  margin-bottom: 6px;
+}
+
+.notice p {
+  color: #687871;
+}
+
+.notice-category {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  font-size: .75rem;
+
+  font-weight: 700;
+
+  color: #087f45;
+
+  background: #e8f7ef;
+
+  padding: 4px 8px;
+
+  border-radius: 20px;
+}
+
+.notice.hidden {
+  display: none;
+}
+
+.notice-empty {
+  display: none;
+
+  text-align: center;
+
+  grid-column: 1/-1;
+
+  padding: 30px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+  text-align: center;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      rgba(0,90,50,.93),
+      rgba(0,90,50,.93)
+    ),
+    url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=80");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.cta h2 {
+  font-size: 2.3rem;
+
+  margin-bottom: 12px;
+}
+
+.cta p {
+  max-width: 700px;
+
+  margin: 0 auto 25px;
+
+  color: #e2f1e9;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  background: #10251e;
+
+  color: white;
+
+  padding: 50px 6% 25px;
+}
+
+.footer-grid {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr;
+
+  gap: 35px;
+
+  margin-bottom: 30px;
+}
+
+footer p {
+  color: #b8c9c1;
+
+  margin-bottom: 7px;
+}
+
+footer a {
+  color: #b8c9c1;
+
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+
+.copyright {
+  border-top: 1px solid #30453d;
+
+  padding-top: 20px;
+
+  color: #aebdb7;
+
+  font-size: .85rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px) {
+
+  .grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:850px) {
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+
+    position: absolute;
+
+    top: 65px;
+
+    left: 0;
+    right: 0;
+
+    background: white;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 20px 6%;
+
+    border-bottom: 1px solid #ddd;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .school-search,
+  .notice-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .notice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media(max-width:650px) {
+
+  section {
+    padding: 60px 5%;
+  }
+
+  .hero {
+    padding: 70px 5%;
+  }
+
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .amounts {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .quiz {
+    padding: 20px;
+  }
+
+  .quiz-controls {
+    flex-direction: column;
+  }
+
+  .quiz-controls button {
+    width: 100%;
+  }
+
+  .quiz-stats {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+
+  <div class="logo">
+    🇳🇬 Naija<span>HealthCare</span>
+  </div>
+
+  <button class="menu-btn" onclick="toggleMenu()">
+    ☰ Menu
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+
+    <li><a href="#home">Home</a></li>
+
+    <li><a href="#support">Get Help</a></li>
+
+    <li>
+      <a href="#donate" class="nav-donate">
+        ❤️ Donate
+      </a>
+    </li>
+
+    <li><a href="#courses">Courses</a></li>
+
+    <li><a href="#tutors">Tutors</a></li>
+
+    <li><a href="#schools">Schools</a></li>
+
+    <li><a href="#quiz">Quiz</a></li>
+
+    <li><a href="#notices">Daily Health</a></li>
+
+  </ul>
+
+</nav>
+
+
+<!-- ========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+  <div>
+
+    <p class="hero-label">
+      🇳🇬 HEALTHCARE • EDUCATION • COMMUNITY
+    </p>
+
+    <h1>
+      Building a healthier
+      <span>Nigeria together.</span>
+    </h1>
+
+    <p>
+      Support healthcare needs, learn about health,
+      discover health educators and schools, and improve
+      your health knowledge through progressive quizzes.
+    </p>
+
+    <div class="buttons">
+
+      <a href="#donate" class="btn btn-primary">
+        ❤️ Donate
+      </a>
+
+      <a href="#support" class="btn btn-white">
+        🏥 Get Healthcare Help
+      </a>
+
+      <a href="#quiz" class="btn btn-white">
+        🧠 Take Quiz
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-card">
+
+    <h3>
+      Community Impact
+    </h3>
+
+    <div class="stat">
+      <strong>₦12.4M+</strong>
+      Donations received
+    </div>
+
+    <div class="stat">
+      <strong>1,250+</strong>
+      People supported
+    </div>
+
+    <div class="stat">
+      <strong>25+</strong>
+      Health educators
+    </div>
+
+    <div class="stat">
+      <strong>60+</strong>
+      Quiz questions
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     SERVICES
+========================================================= -->
+
+<section class="impact-section">
+
+  <div class="section-title">
+
+    <h2>
+      What Naija HealthCare Does
+    </h2>
+
+    <p>
+      Connecting healthcare support, education and
+      health information in one platform.
+    </p>
+
+  </div>
+
+
+  <div class="grid">
+
+    <div class="card">
+
+      <div class="icon">❤️</div>
+
+      <h3>
+        Healthcare Support
+      </h3>
+
+      <p>
+        Give people a place to submit healthcare-support
+        requests for review.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🎓</div>
+
+      <h3>
+        Health Education
+      </h3>
+
+      <p>
+        Connect learners with health educators and
+        structured educational courses.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">📰</div>
+
+      <h3>
+        Daily Health Information
+      </h3>
+
+      <p>
+        Receive a changing selection of general health
+        education notices every day.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     DONATION
+========================================================= -->
+
+<section class="donation" id="donate">
+
+  <div class="section-title">
+
+    <h2>
+      Support Healthcare in Nigeria
+    </h2>
+
+    <p>
+      Your donation can help support verified healthcare needs.
+    </p>
+
+  </div>
+
+
+  <div class="donation-box">
+
+    <label>
+      Choose amount
+    </label>
+
+    <div class="amounts">
+
+      <button class="amount"
+        onclick="selectAmount(this,1000)">
+        ₦1,000
+      </button>
+
+      <button class="amount"
+        onclick="selectAmount(this,5000)">
+        ₦5,000
+      </button>
+
+      <button class="amount"
+        onclick="selectAmount(this,10000)">
+        ₦10,000
+      </button>
+
+      <button class="amount"
+        onclick="selectAmount(this,25000)">
+        ₦25,000
+      </button>
+
+    </div>
+
+
+    <label>
+      Custom amount
+    </label>
+
+    <input
+      id="customAmount"
+      type="number"
+      min="100"
+      placeholder="Enter amount in Naira"
+    >
+
+
+    <label>
+      Payment method
+    </label>
+
+    <select id="paymentMethod">
+
+      <option>
+        Bank Card
+      </option>
+
+      <option>
+        Bank Transfer
+      </option>
+
+      <option>
+        USSD
+      </option>
+
+      <option>
+        Other supported payment method
+      </option>
+
+    </select>
+
+
+    <button
+      class="btn btn-primary"
+      style="width:100%"
+      onclick="donate()">
+
+      Continue Donation
+
+    </button>
+
+
+    <p
+      id="donation-message"
+      style="margin-top:15px">
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     SUPPORT
+========================================================= -->
+
+<section id="support">
+
+  <div class="section-title">
+
+    <h2>
+      🏥 Request Healthcare Support
+    </h2>
+
+    <p>
+      Submit your request for review.
+    </p>
+
+  </div>
+
+
+  <div class="form-box">
+
+    <form onsubmit="submitSupport(event)">
+
+      <label>Full Name</label>
+
+      <input
+        required
+        type="text"
+        placeholder="Your name"
+      >
+
+
+      <label>Phone Number</label>
+
+      <input
+        required
+        type="tel"
+        placeholder="0800 000 0000"
+      >
+
+
+      <label>State</label>
+
+      <select required>
+
+        <option value="">
+          Select State
+        </option>
+
+        <option>Lagos</option>
+        <option>Abuja FCT</option>
+        <option>Rivers</option>
+        <option>Kano</option>
+        <option>Oyo</option>
+        <option>Enugu</option>
+        <option>Other</option>
+
+      </select>
+
+
+      <label>
+        Describe your healthcare-support request
+      </label>
+
+      <textarea
+        required
+        rows="6"
+        placeholder="Describe the request generally">
+      </textarea>
+
+
+      <button
+        class="btn btn-primary"
+        type="submit">
+
+        Submit Request
+
+      </button>
+
+
+      <p
+        id="support-message"
+        style="margin-top:15px">
+      </p>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     COURSES
+========================================================= -->
+
+<section class="courses-section" id="courses">
+
+  <div class="section-title">
+
+    <h2>
+      🎓 Health Education Courses
+    </h2>
+
+    <p>
+      Educational courses taught by qualified educators.
+    </p>
+
+  </div>
+
+
+  <div class="grid">
+
+
+    <div class="card">
+
+      <span class="tag">Beginner</span>
+
+      <h3>
+        Human Anatomy Fundamentals
+      </h3>
+
+      <p>
+        Learn foundational concepts about the structure
+        and organization of the human body.
+      </p>
+
+      <ul class="course-list">
+
+        <li>✓ Video lessons</li>
+        <li>✓ Tutor support</li>
+        <li>✓ Progressive quizzes</li>
+        <li>✓ Completion certificate</li>
+
+      </ul>
+
+      <div class="course-price">
+        ₦50,000
+      </div>
+
+      <button
+        class="btn btn-primary"
+        onclick="enroll('Human Anatomy Fundamentals')">
+
+        Enroll
+
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <span class="tag">Health</span>
+
+      <h3>
+        Disease Prevention
+      </h3>
+
+      <p>
+        Study general public-health principles and
+        disease-prevention concepts.
+      </p>
+
+      <ul class="course-list">
+
+        <li>✓ Video lessons</li>
+        <li>✓ Tutor support</li>
+        <li>✓ Progressive quizzes</li>
+        <li>✓ Certificate</li>
+
+      </ul>
+
+      <div class="course-price">
+        ₦50,000
+      </div>
+
+      <button
+        class="btn btn-primary"
+        onclick="enroll('Disease Prevention')">
+
+        Enroll
+
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <span class="tag">Science</span>
+
+      <h3>
+        Human Biology
+      </h3>
+
+      <p>
+        Build a foundation in human biology and
+        important biological concepts.
+      </p>
+
+      <ul class="course-list">
+
+        <li>✓ Structured lessons</li>
+        <li>✓ Tutor support</li>
+        <li>✓ Knowledge tests</li>
+        <li>✓ Certificate</li>
+
+      </ul>
+
+      <div class="course-price">
+        ₦50,000
+      </div>
+
+      <button
+        class="btn btn-primary"
+        onclick="enroll('Human Biology')">
+
+        Enroll
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <p
+    style="
+      max-width:800px;
+      margin:30px auto 0;
+      text-align:center;
+      color:#687871;
+    ">
+
+    <strong>Important:</strong>
+    These are educational courses. Completing an online
+    course does not by itself qualify someone to practise
+    medicine or become a licensed doctor.
+
+  </p>
+
+</section>
+
+
+<!-- ========================================================
+     TUTORS
+========================================================= -->
+
+<section class="tutors-section" id="tutors">
+
+  <div class="section-title">
+
+    <h2>
+      👨‍⚕️ Health Educators
+    </h2>
+
+    <p>
+      Profiles for educators who can teach health-related
+      subjects.
+    </p>
+
+  </div>
+
+
+  <div class="grid">
+
+
+    <div class="card">
+
+      <div class="icon">👨‍⚕️</div>
+
+      <h3>
+        Dr. Amina Yusuf
+      </h3>
+
+      <span class="verified">
+        ✓ Credentials Verified
+      </span>
+
+      <p>
+        Anatomy and physiology educator.
+      </p>
+
+      <span class="tag">
+        Anatomy
+      </span>
+
+      <span class="tag">
+        Physiology
+      </span>
+
+      <br><br>
+
+      <button
+        class="btn btn-primary"
+        onclick="viewTutor('Dr. Amina Yusuf')">
+
+        View Profile
+
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">👩‍⚕️</div>
+
+      <h3>
+        Mrs. Grace Okafor
+      </h3>
+
+      <span class="verified">
+        ✓ Credentials Verified
+      </span>
+
+      <p>
+        Public-health educator.
+      </p>
+
+      <span class="tag">
+        Public Health
+      </span>
+
+      <span class="tag">
+        Prevention
+      </span>
+
+      <br><br>
+
+      <button
+        class="btn btn-primary"
+        onclick="viewTutor('Mrs. Grace Okafor')">
+
+        View Profile
+
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🧑‍🔬</div>
+
+      <h3>
+        Mr. David Ibrahim
+      </h3>
+
+      <span class="verified">
+        ✓ Credentials Verified
+      </span>
+
+      <p>
+        Biology and health-science educator.
+      </p>
+
+      <span class="tag">
+        Biology
+      </span>
+
+      <span class="tag">
+        Science
+      </span>
+
+      <br><br>
+
+      <button
+        class="btn btn-primary"
+        onclick="viewTutor('Mr. David Ibrahim')">
+
+        View Profile
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     SCHOOLS
+========================================================= -->
+
+<section class="schools-section" id="schools">
+
+  <div class="section-title">
+
+    <h2>
+      🏫 Find Health Schools
+    </h2>
+
+    <p>
+      Search health-related programmes and verify
+      current accreditation before applying.
+    </p>
+
+  </div>
+
+
+  <div class="school-search">
+
+    <input
+      id="schoolSearch"
+      type="text"
+      placeholder="Search Medicine, Nursing, Pharmacy..."
+      oninput="searchSchools()"
+    >
+
+
+    <select
+      id="schoolType"
+      onchange="searchSchools()">
+
+      <option value="all">
+        All Programmes
+      </option>
+
+      <option value="medicine">
+        Medicine
+      </option>
+
+      <option value="nursing">
+        Nursing
+      </option>
+
+      <option value="pharmacy">
+        Pharmacy
+      </option>
+
+      <option value="public-health">
+        Public Health
+      </option>
+
+      <option value="medical-lab">
+        Medical Laboratory Science
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <div id="schoolResults" class="grid">
+
+
+    <div
+      class="card school-card"
+      data-type="medicine"
+      data-name="Medicine and Surgery">
+
+      <div class="icon">🩺</div>
+
+      <h3>
+        Medicine & Surgery
+      </h3>
+
+      <span class="tag">MBBS</span>
+
+      <p>
+        Search for institutions offering Medicine and Surgery
+        and verify their current status.
+      </p>
+
+      <br>
+
+      <button
+        class="btn btn-primary"
+        onclick="showSchoolInfo('Medicine & Surgery')">
+
+        Find Schools
+
+      </button>
+
+    </div>
+
+
+    <div
+      class="card school-card"
+      data-type="nursing"
+      data-name="Nursing Science">
+
+      <div class="icon">👩‍⚕️</div>
+
+      <h3>
+        Nursing Science
+      </h3>
+
+      <span class="tag">Nursing</span>
+
+      <p>
+        Explore nursing education and verify institutions
+        before applying.
+      </p>
+
+      <br>
+
+      <button
+        class="btn btn-primary"
+        onclick="showSchoolInfo('Nursing Science')">
+
+        Find Schools
+
+      </button>
+
+    </div>
+
+
+    <div
+      class="card school-card"
+      data-type="pharmacy"
+      data-name="Pharmacy">
+
+      <div class="icon">💊</div>
+
+      <h3>
+        Pharmacy
+      </h3>
+
+      <span class="tag">Pharmacy</span>
+
+      <p>
+        Explore pharmacy programmes and verify their
+        current recognition.
+      </p>
+
+      <br>
+
+      <button
+        class="btn btn-primary"
+        onclick="showSchoolInfo('Pharmacy')">
+
+        Find Schools
+
+      </button>
+
+    </div>
+
+
+    <div
+      class="card school-card"
+      data-type="public-health"
+      data-name="Public Health">
+
+      <div class="icon">🌍</div>
+
+      <h3>
+        Public Health
+      </h3>
+
+      <span class="tag">Public Health</span>
+
+      <p>
+        Explore public-health programmes focused on
+        community health.
+      </p>
+
+      <br>
+
+      <button
+        class="btn btn-primary"
+        onclick="showSchoolInfo('Public Health')">
+
+        Find Schools
+
+      </button>
+
+    </div>
+
+
+    <div
+      class="card school-card"
+      data-type="medical-lab"
+      data-name="Medical Laboratory Science">
+
+      <div class="icon">🔬</div>
+
+      <h3>
+        Medical Laboratory Science
+      </h3>
+
+      <span class="tag">Laboratory</span>
+
+      <p>
+        Explore medical laboratory science programmes.
+      </p>
+
+      <br>
+
+      <button
+        class="btn btn-primary"
+        onclick="showSchoolInfo('Medical Laboratory Science')">
+
+        Find Schools
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div
+    id="noSchools"
+    style="
+      display:none;
+      text-align:center;
+      margin-top:25px;
+    ">
+
+    <h3>No programmes found.</h3>
+
+    <p>
+      Try another search.
+    </p>
+
+  </div>
+
+
+  <div class="school-info">
+
+    <h3>
+      🔎 Verify Before Applying
+    </h3>
+
+    <p style="margin:10px 0 18px">
+
+      School and programme status can change. Always verify
+      current information using the appropriate official
+      regulatory or institutional source before paying fees.
+
+    </p>
+
+    <a
+      href="https://www.nuc.edu.ng/approved-accredited-programmes/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-primary">
+
+      Check NUC Information
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     PROGRESSIVE RANDOM QUIZ
+========================================================= -->
+
+<section class="quiz-section" id="quiz">
+
+  <div class="section-title">
+
+    <h2>
+      🧠 Smart Health Quiz
+    </h2>
+
+    <p>
+      Questions are selected from a larger question bank.
+      The difficulty changes according to your performance.
+    </p>
+
+  </div>
+
+
+  <div class="quiz-container">
+
+    <div class="quiz">
+
+      <div
+        id="quizContent">
+
+        <div class="quiz-top">
+
+          <div
+            class="quiz-badge"
+            id="quizLevel">
+
+            Level 1 — Beginner
+
+          </div>
+
+          <div
+            class="quiz-score"
+            id="quizScore">
+
+            Score: 0
+
+          </div>
+
+        </div>
+
+
+        <div class="progress-background">
+
+          <div
+            class="progress-bar"
+            id="progressBar">
+          </div>
+
+        </div>
+
+
+        <h3 id="quiz-question">
+          Loading...
+        </h3>
+
+
+        <div
+          class="quiz-options"
+          id="quizOptions">
+        </div>
+
+
+        <div
+          id="quizFeedback"
+          class="quiz-feedback">
+        </div>
+
+
+        <div class="quiz-controls">
+
+          <button
+            id="answerBtn"
+            class="btn btn-primary"
+            onclick="submitQuizAnswer()">
+
+            Submit Answer
+
+          </button>
+
+
+          <button
+            id="nextBtn"
+            class="btn btn-secondary next-btn"
+            onclick="nextQuestion()">
+
+            Next Question →
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div
+        id="quizResult"
+        class="quiz-result">
+
+        <h3>
+          🎉 Quiz Complete!
+        </h3>
+
+        <div
+          class="final-score"
+          id="finalScore">
+
+          0
+
+        </div>
+
+
+        <div class="quiz-stats">
+
+          <div class="quiz-stat">
+
+            <strong id="correctCount">
+              0
+            </strong>
+
+            Correct
+
+          </div>
+
+
+          <div class="quiz-stat">
+
+            <strong id="wrongCount">
+              0
+            </strong>
+
+            Incorrect
+
+          </div>
+
+
+          <div class="quiz-stat">
+
+            <strong id="highestLevel">
+              1
+            </strong>
+
+            Highest Level
+
+          </div>
+
+        </div>
+
+
+        <p id="levelMessage">
+        </p>
+
+
+        <br>
+
+
+        <button
+          class="btn btn-primary"
+          onclick="restartQuiz()">
+
+          🔄 Start New Quiz
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     DAILY HEALTH NOTICES
+========================================================= -->
+
+<section
+  class="notices-section"
+  id="notices">
+
+  <div class="section-title">
+
+    <h2>
+      📰 20 Health Notices Today
+    </h2>
+
+    <p>
+      The selection changes automatically each day.
+    </p>
+
+  </div>
+
+
+  <div
+    class="notice-date"
+    id="noticeDate">
+  </div>
+
+
+  <div class="notice-controls">
+
+    <input
+      id="noticeSearch"
+      type="text"
+      placeholder="Search today's notices..."
+      oninput="filterNotices()"
+    >
+
+
+    <select
+      id="noticeCategory"
+      onchange="filterNotices()">
+
+      <option value="all">
+        All Categories
+      </option>
+
+      <option value="hygiene">
+        Hygiene
+      </option>
+
+      <option value="nutrition">
+        Nutrition
+      </option>
+
+      <option value="prevention">
+        Prevention
+      </option>
+
+      <option value="wellness">
+        Wellness
+      </option>
+
+      <option value="safety">
+        Safety
+      </option>
+
+      <option value="community">
+        Community Health
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <div
+    class="notice-grid"
+    id="noticeGrid">
+  </div>
+
+
+  <div
+    class="notice-empty"
+    id="noticeEmpty">
+
+    <h3>
+      No matching notices
+    </h3>
+
+    <p>
+      Try another search or category.
+    </p>
+
+  </div>
+
+
+  <p
+    style="
+      max-width:1000px;
+      margin:30px auto 0;
+      color:#687871;
+      text-align:center;
+      font-size:.9rem;
+    ">
+
+    <strong>Health information notice:</strong>
+    These notices are general educational reminders and
+    are not a substitute for professional medical advice.
+    Current public-health alerts should be checked against
+    official Nigerian health authorities.
+
+  </p>
+
+</section>
+
+
+<!-- ========================================================
+     CTA
+========================================================= -->
+
+<section class="cta">
+
+  <h2>
+    Help Build a Healthier Nigeria
+  </h2>
+
+  <p>
+    Support healthcare, learn about health, find educators
+    and improve your knowledge.
+  </p>
+
+  <div
+    class="buttons"
+    style="justify-content:center">
+
+    <a
+      href="#donate"
+      class="btn btn-white">
+
+      ❤️ Donate
+
+    </a>
+
+    <a
+      href="#quiz"
+      class="btn btn-white">
+
+      🧠 Take Quiz
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="footer-grid">
+
+    <div>
+
+      <h3>
+        🇳🇬 Naija HealthCare
+      </h3>
+
+      <p>
+        Healthcare support, health education and
+        disease-prevention awareness.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h3>
+        Platform
+      </h3>
+
+      <p><a href="#donate">Donate</a></p>
+
+      <p><a href="#support">Healthcare Support</a></p>
+
+      <p><a href="#courses">Courses</a></p>
+
+      <p><a href="#tutors">Tutors</a></p>
+
+    </div>
+
+
+    <div>
+
+      <h3>
+        Learn
+      </h3>
+
+      <p><a href="#schools">Schools</a></p>
+
+      <p><a href="#quiz">Quiz</a></p>
+
+      <p><a href="#notices">Health Notices</a></p>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+
+    © 2026 Naija HealthCare — Educational Website Prototype.
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMenu() {
+
+  document
+    .getElementById("navLinks")
+    .classList
+    .toggle("show");
+
+}
+
+
+/* =========================================================
+   DONATIONS
+========================================================= */
+
+let selectedDonation = 0;
+
+
+function selectAmount(button, amount) {
+
+  document
+    .querySelectorAll(".amount")
+    .forEach(btn =>
+      btn.classList.remove("selected")
+    );
+
+  button.classList.add("selected");
+
+  selectedDonation = amount;
+
+  document
+    .getElementById("customAmount")
+    .value = "";
+
+}
+
+
+function donate() {
+
+  const custom =
+    Number(
+      document
+        .getElementById("customAmount")
+        .value
+    );
+
+  const amount =
+    custom > 0
+      ? custom
+      : selectedDonation;
+
+  if (!amount) {
+
+    alert(
+      "Please choose or enter a donation amount."
+    );
+
+    return;
+  }
+
+  const method =
+    document
+      .getElementById("paymentMethod")
+      .value;
+
+  document
+    .getElementById("donation-message")
+    .innerHTML =
+      `Donation selected: <strong>₦${amount.toLocaleString()}</strong>
+      via <strong>${method}</strong>.<br><br>
+      In the production version, this button should connect
+      to a secure payment processor.`;
+
+}
+
+
+/* =========================================================
+   SUPPORT FORM
+========================================================= */
+
+function submitSupport(event) {
+
+  event.preventDefault();
+
+  document
+    .getElementById("support-message")
+    .innerHTML =
+      "✓ Your request has been submitted in this prototype.";
+
+  event.target.reset();
+
+}
+
+
+/* =========================================================
+   COURSES
+========================================================= */
+
+function enroll(course) {
+
+  alert(
+    `You selected "${course}".\n\n` +
+    `Course price: ₦50,000.\n\n` +
+    `A production website would continue to secure checkout.`
+  );
+
+}
+
+
+/* =========================================================
+   TUTORS
+========================================================= */
+
+function viewTutor(name) {
+
+  alert(
+    `${name}\n\n` +
+    `A production profile would contain verified qualifications, ` +
+    `subjects, teaching experience and available classes.`
+  );
+
+}
+
+
+/* =========================================================
+   SCHOOL SEARCH
+========================================================= */
+
+function searchSchools() {
+
+  const query =
+    document
+      .getElementById("schoolSearch")
+      .value
+      .toLowerCase()
+      .trim();
+
+  const type =
+    document
+      .getElementById("schoolType")
+      .value;
+
+  const schools =
+    document.querySelectorAll(".school-card");
+
+  let visible = 0;
+
+
+  schools.forEach(school => {
+
+    const name =
+      school.dataset.name.toLowerCase();
+
+    const schoolType =
+      school.dataset.type;
+
+    const matchesText =
+      name.includes(query);
+
+    const matchesType =
+      type === "all" ||
+      type === schoolType;
+
+
+    if (
+      matchesText &&
+      matchesType
+    ) {
+
+      school.classList.remove("hidden");
+
+      visible++;
+
+    } else {
+
+      school.classList.add("hidden");
+
+    }
+
+  });
+
+
+  document
+    .getElementById("noSchools")
+    .style.display =
+      visible === 0
+        ? "block"
+        : "none";
+
+}
+
+
+function showSchoolInfo(programme) {
+
+  alert(
+    `Programme: ${programme}\n\n` +
+    `The production version would display verified ` +
+    `institutions offering this programme. Always check ` +
+    `current accreditation before applying.`
+  );
+
+}
+
+
+/* =========================================================
+   LARGE QUIZ QUESTION BANK
+========================================================= */
+
+const questionBank = [
+
+  /* =========================
+     LEVEL 1
+  ========================= */
+
+  {
+    level: 1,
+    q: "Which organ pumps blood around the human body?",
+    a: [
+      "The heart",
+      "The liver",
+      "The stomach",
+      "The kidney"
+    ],
+    c: 0,
+    e: "The heart pumps blood through the circulatory system."
+  },
+
+  {
+    level: 1,
+    q: "Which practice helps reduce the spread of many infections?",
+    a: [
+      "Regular hand hygiene",
+      "Sharing personal items",
+      "Ignoring symptoms",
+      "Avoiding all healthcare"
+    ],
+    c: 0,
+    e: "Hand hygiene can reduce the spread of many infectious diseases."
+  },
+
+  {
+    level: 1,
+    q: "Which nutrient is important for building and repairing tissues?",
+    a: [
+      "Protein",
+      "Oxygen",
+      "Salt",
+      "Water only"
+    ],
+    c: 0,
+    e: "Protein supplies amino acids used to build and repair body tissues."
+  },
+
+  {
+    level: 1,
+    q: "Which organ is primarily responsible for breathing gas exchange?",
+    a: [
+      "Lungs",
+      "Kidneys",
+      "Stomach",
+      "Pancreas"
+    ],
+    c: 0,
+    e: "The lungs exchange oxygen and carbon dioxide."
+  },
+
+  {
+    level: 1,
+    q: "Which body system includes the bones?",
+    a: [
+      "Skeletal system",
+      "Digestive system",
+      "Respiratory system",
+      "Endocrine system"
+    ],
+    c: 0,
+    e: "Bones form the main framework of the skeletal system."
+  },
+
+  {
+    level: 1,
+    q: "Which substance is essential for normal hydration?",
+    a: [
+      "Water",
+      "Smoke",
+      "Alcohol",
+      "Engine oil"
+    ],
+    c: 0,
+    e: "Water is essential for normal body functions and fluid balance."
+  },
+
+  {
+    level: 1,
+    q: "What is a balanced diet intended to provide?",
+    a: [
+      "A variety of nutrients",
+      "Only carbohydrates",
+      "Only fats",
+      "Only protein"
+    ],
+    c: 0,
+    e: "A balanced diet provides a variety of nutrients the body needs."
+  },
+
+  {
+    level: 1,
+    q: "Why is clean drinking water important?",
+    a: [
+      "It supports hydration and helps reduce exposure to contaminants",
+      "It replaces all medical care",
+      "It prevents every disease",
+      "It removes the need for food"
+    ],
+    c: 0,
+    e: "Safe water supports hydration and can reduce exposure to harmful contaminants."
+  },
+
+  {
+    level: 1,
+    q: "Which organ is mainly associated with digestion of food?",
+    a: [
+      "Digestive system",
+      "Skeletal system",
+      "Nervous system",
+      "Respiratory system"
+    ],
+    c: 0,
+    e: "The digestive system processes food and absorbs nutrients."
+  },
+
+  {
+    level: 1,
+    q: "What is one reason people receive vaccines?",
+    a: [
+      "To help the immune system recognize specific infections",
+      "To replace sleep",
+      "To replace food",
+      "To guarantee that no illness is ever possible"
+    ],
+    c: 0,
+    e: "Vaccines train the immune system to recognize specific disease-causing organisms or components."
+  },
+
+
+  /* =========================
+     LEVEL 2
+  ========================= */
+
+  {
+    level: 2,
+    q: "Which blood cells are important in defending the body against infection?",
+    a: [
+      "White blood cells",
+      "Red blood cells",
+      "Platelets",
+      "Bone cells"
+    ],
+    c: 0,
+    e: "White blood cells are major components of the immune system."
+  },
+
+  {
+    level: 2,
+    q: "What is the main function of red blood cells?",
+    a: [
+      "Transport oxygen",
+      "Digest food",
+      "Produce urine",
+      "Make bones"
+    ],
+    c: 0,
+    e: "Red blood cells contain hemoglobin and transport oxygen."
+  },
+
+  {
+    level: 2,
+    q: "Which system transports blood around the body?",
+    a: [
+      "Circulatory system",
+      "Skeletal system",
+      "Digestive system",
+      "Integumentary system"
+    ],
+    c: 0,
+    e: "The circulatory system moves blood around the body."
+  },
+
+  {
+    level: 2,
+    q: "Which organ filters waste from the blood and helps produce urine?",
+    a: [
+      "Kidney",
+      "Lung",
+      "Heart",
+      "Stomach"
+    ],
+    c: 0,
+    e: "The kidneys filter blood and help regulate fluid and electrolyte balance."
+  },
+
+  {
+    level: 2,
+    q: "What is the main function of the lungs?",
+    a: [
+      "Gas exchange",
+      "Blood filtration",
+      "Food storage",
+      "Bone formation"
+    ],
+    c: 0,
+    e: "The lungs exchange oxygen and carbon dioxide."
+  },
+
+  {
+    level: 2,
+    q: "What is a symptom?",
+    a: [
+      "A change or problem experienced by a person",
+      "A laboratory machine",
+      "A hospital building",
+      "A type of medicine"
+    ],
+    c: 0,
+    e: "A symptom is something a person experiences or reports that may indicate illness."
+  },
+
+  {
+    level: 2,
+    q: "What is a sign in medicine?",
+    a: [
+      "An observable finding",
+      "A person's favorite food",
+      "A hospital payment",
+      "A school subject"
+    ],
+    c: 0,
+    e: "A sign is an observable or measurable finding."
+  },
+
+  {
+    level: 2,
+    q: "Why is food hygiene important?",
+    a: [
+      "It can help reduce foodborne illness",
+      "It makes every food nutritious",
+      "It replaces refrigeration",
+      "It guarantees food is safe forever"
+    ],
+    c: 0,
+    e: "Good food hygiene helps reduce contamination and foodborne illness."
+  },
+
+  {
+    level: 2,
+    q: "What does prevention generally mean in public health?",
+    a: [
+      "Taking steps to reduce health risks before problems occur",
+      "Ignoring illness",
+      "Avoiding all hospitals",
+      "Treating every condition without diagnosis"
+    ],
+    c: 0,
+    e: "Prevention aims to reduce health risks and prevent disease or complications."
+  },
+
+  {
+    level: 2,
+    q: "Why can sleep be important for health?",
+    a: [
+      "It supports normal physical and mental functions",
+      "It replaces nutrition",
+      "It prevents every disease",
+      "It eliminates the need for exercise"
+    ],
+    c: 0,
+    e: "Adequate sleep supports many normal physical and mental processes."
+  },
+
+
+  /* =========================
+     LEVEL 3
+  ========================= */
+
+  {
+    level: 3,
+    q: "Where does most oxygen exchange occur in the lungs?",
+    a: [
+      "Alveoli",
+      "Esophagus",
+      "Stomach",
+      "Kidneys"
+    ],
+    c: 0,
+    e: "Alveoli are tiny air sacs where gas exchange occurs."
+  },
+
+  {
+    level: 3,
+    q: "Which structure connects the mouth and stomach?",
+    a: [
+      "Esophagus",
+      "Trachea",
+      "Aorta",
+      "Ureter"
+    ],
+    c: 0,
+    e: "The esophagus carries swallowed food toward the stomach."
+  },
+
+  {
+    level: 3,
+    q: "What is homeostasis?",
+    a: [
+      "Maintenance of relatively stable internal conditions",
+      "Formation of bones only",
+      "Digestion of protein only",
+      "Movement of blood only"
+    ],
+    c: 0,
+    e: "Homeostasis refers to regulation of internal conditions within suitable ranges."
+  },
+
+  {
+    level: 3,
+    q: "Which blood component is primarily involved in clot formation?",
+    a: [
+      "Platelets",
+      "Red blood cells",
+      "Alveoli",
+      "Neurons"
+    ],
+    c: 0,
+    e: "Platelets are important in normal blood clotting."
+  },
+
+  {
+    level: 3,
+    q: "Which part of the nephron begins the filtration process?",
+    a: [
+      "Glomerulus",
+      "Collecting duct",
+      "Ureter",
+      "Bladder"
+    ],
+    c: 0,
+    e: "Blood filtration begins at the glomerulus."
+  },
+
+  {
+    level: 3,
+    q: "What is adaptive immunity?",
+    a: [
+      "Specific immune responses that can develop memory",
+      "A type of bone",
+      "A digestive enzyme",
+      "A breathing muscle"
+    ],
+    c: 0,
+    e: "Adaptive immunity involves specific responses and can produce immunological memory."
+  },
+
+  {
+    level: 3,
+    q: "What is antimicrobial resistance?",
+    a: [
+      "When microorganisms become less susceptible to medicines designed to treat them",
+      "When people become immune to water",
+      "When bones become stronger",
+      "When oxygen levels rise"
+    ],
+    c: 0,
+    e: "Antimicrobial resistance occurs when microorganisms no longer respond effectively to medicines that previously worked."
+  },
+
+  {
+    level: 3,
+    q: "Why is laboratory testing sometimes useful in diagnosis?",
+    a: [
+      "It can provide evidence that helps clinicians assess a condition",
+      "It always gives a perfect answer",
+      "It replaces clinical assessment",
+      "It makes treatment unnecessary"
+    ],
+    c: 0,
+    e: "Laboratory tests can provide evidence that contributes to clinical assessment and diagnosis."
+  },
+
+  {
+    level: 3,
+    q: "What is an infectious disease?",
+    a: [
+      "A disease caused by an infectious agent",
+      "Any injury",
+      "Any genetic trait",
+      "Any nutritional deficiency"
+    ],
+    c: 0,
+    e: "Infectious diseases are caused by infectious agents such as bacteria, viruses, fungi or parasites."
+  },
+
+  {
+    level: 3,
+    q: "Why is surveillance important in public health?",
+    a: [
+      "It helps monitor diseases and detect changes or outbreaks",
+      "It replaces hospitals",
+      "It prevents all diseases",
+      "It removes the need for laboratory testing"
+    ],
+    c: 0,
+    e: "Public-health surveillance helps authorities monitor disease patterns and identify possible outbreaks."
+  },
+
+
+  /* =========================
+     LEVEL 4
+  ========================= */
+
+  {
+    level: 4,
+    q: "Which structure of a neuron commonly receives signals from other cells?",
+    a: [
+      "Dendrites",
+      "Myelin only",
+      "Axon terminal only",
+      "Cell membrane only"
+    ],
+    c: 0,
+    e: "Dendrites commonly receive incoming signals from other neurons or sensory cells."
+  },
+
+  {
+    level: 4,
+    q: "Which molecule carries most oxygen in human blood?",
+    a: [
+      "Hemoglobin",
+      "Insulin",
+      "Collagen",
+      "Keratin"
+    ],
+    c: 0,
+    e: "Hemoglobin binds oxygen inside red blood cells."
+  },
+
+  {
+    level: 4,
+    q: "What is the primary role of insulin?",
+    a: [
+      "Helping regulate blood glucose",
+      "Carrying oxygen",
+      "Digesting proteins in the stomach",
+      "Producing red blood cells"
+    ],
+    c: 0,
+    e: "Insulin is a hormone involved in regulation of blood glucose."
+  },
+
+  {
+    level: 4,
+    q: "Which division of the nervous system regulates many involuntary functions?",
+    a: [
+      "Autonomic nervous system",
+      "Skeletal system",
+      "Digestive tract only",
+      "Skeletal muscle system"
+    ],
+    c: 0,
+    e: "The autonomic nervous system regulates many involuntary processes."
+  },
+
+  {
+    level: 4,
+    q: "What is epidemiology primarily concerned with?",
+    a: [
+      "Patterns and causes of health conditions in populations",
+      "Only individual surgery",
+      "Only drug manufacturing",
+      "Only hospital architecture"
+    ],
+    c: 0,
+    e: "Epidemiology studies patterns, causes and effects of health conditions in populations."
+  },
+
+  {
+    level: 4,
+    q: "What does incidence generally measure?",
+    a: [
+      "New cases occurring in a population during a specified period",
+      "All existing cases regardless of time",
+      "Number of hospital buildings",
+      "Number of healthcare workers"
+    ],
+    c: 0,
+    e: "Incidence concerns new cases occurring during a specified period."
+  },
+
+  {
+    level: 4,
+    q: "What does prevalence generally describe?",
+    a: [
+      "Existing cases in a population at a particular time or period",
+      "Only new cases",
+      "Only deaths",
+      "Only laboratory tests"
+    ],
+    c: 0,
+    e: "Prevalence describes existing cases in a population at a particular time or during a period."
+  },
+
+  {
+    level: 4,
+    q: "Why is antimicrobial stewardship important?",
+    a: [
+      "It promotes appropriate use of antimicrobials and helps address resistance",
+      "It makes antibiotics work against every infection",
+      "It means taking antibiotics for every fever",
+      "It eliminates the need for diagnosis"
+    ],
+    c: 0,
+    e: "Antimicrobial stewardship promotes appropriate use and helps reduce unnecessary exposure that can contribute to resistance."
+  },
+
+  {
+    level: 4,
+    q: "What is herd immunity generally related to?",
+    a: [
+      "A population having enough immunity to reduce transmission of an infection",
+      "A person's blood type",
+      "Bone density",
+      "Digestive enzymes"
+    ],
+    c: 0,
+    e: "Population-level immunity can reduce transmission and provide indirect protection."
+  },
+
+  {
+    level: 4,
+    q: "Why is evidence-based healthcare important?",
+    a: [
+      "It supports decisions using the best available evidence alongside clinical expertise and patient needs",
+      "It means every patient receives identical treatment",
+      "It eliminates uncertainty completely",
+      "It removes the need for healthcare professionals"
+    ],
+    c: 0,
+    e: "Evidence-based practice combines available evidence with professional expertise and individual circumstances."
+  }
+
+];
+
+
+/* =========================================================
+   QUIZ ENGINE
+========================================================= */
+
+let currentLevel = 1;
+
+let quizScore = 0;
+
+let correctAnswers = 0;
+
+let wrongAnswers = 0;
+
+let highestLevel = 1;
+
+let questionNumber = 0;
+
+let answered = false;
+
+let usedQuestions = [];
+
+const QUESTIONS_PER_GAME = 15;
+
+
+/* Random integer */
+
+function randomInt(max) {
+
+  return Math.floor(Math.random() * max);
+
+}
+
+
+/* Choose question */
+
+function chooseQuestion() {
+
+  let candidates =
+    questionBank.filter(q =>
+      q.level === currentLevel &&
+      !usedQuestions.includes(q)
+    );
+
+
+  /*
+    If we've used all questions at the
+    current level, allow them again.
+  */
+
+  if (candidates.length === 0) {
+
+    candidates =
+      questionBank.filter(q =>
+        q.level === currentLevel
+      );
+
+  }
+
+
+  const question =
+    candidates[randomInt(candidates.length)];
+
+
+  usedQuestions.push(question);
+
+  return question;
+
+}
+
+
+let currentQuestion = chooseQuestion();
+
+
+function levelName(level) {
+
+  const names = {
+
+    1: "Level 1 — Beginner",
+
+    2: "Level 2 — Intermediate",
+
+    3: "Level 3 — Advanced",
+
+    4: "Level 4 — Expert"
+
+  };
+
+  return names[level];
+
+}
+
+
+function loadQuestion() {
+
+  answered = false;
+
+
+  currentQuestion =
+    chooseQuestion();
+
+
+  document
+    .getElementById("quizLevel")
+    .textContent =
+      levelName(currentLevel);
+
+
+  document
+    .getElementById("quizScore")
+    .textContent =
+      `Score: ${quizScore}`;
+
+
+  const progress =
+    (questionNumber /
+      QUESTIONS_PER_GAME) * 100;
+
+
+  document
+    .getElementById("progressBar")
+    .style.width =
+      `${progress}%`;
+
+
+  document
+    .getElementById("quiz-question")
+    .textContent =
+      currentQuestion.q;
+
+
+  const options =
+    document.getElementById(
+      "quizOptions"
+    );
+
+  options.innerHTML = "";
+
+
+  currentQuestion.a.forEach(
+    (answer,index) => {
+
+      const label =
+        document.createElement("label");
+
+      label.className =
+        "quiz-option";
+
+
+      label.innerHTML = `
+
+        <input
+          type="radio"
+          name="quizAnswer"
+          value="${index}"
+        >
+
+        <span>
+          ${String.fromCharCode(65+index)}.
+          ${answer}
+        </span>
+
+      `;
+
+
+      options.appendChild(label);
+
+    }
+  );
+
+
+  const feedback =
+    document.getElementById(
+      "quizFeedback"
+    );
+
+
+  feedback.className =
+    "quiz-feedback";
+
+  feedback.textContent = "";
+
+
+  document
+    .getElementById("answerBtn")
+    .style.display =
+      "inline-block";
+
+
+  document
+    .getElementById("nextBtn")
+    .style.display =
+      "none";
+
+}
+
+
+/* Submit answer */
+
+function submitQuizAnswer() {
+
+  if (answered) {
+    return;
+  }
+
+
+  const selected =
+    document.querySelector(
+      'input[name="quizAnswer"]:checked'
+    );
+
+
+  if (!selected) {
+
+    alert(
+      "Please select an answer."
+    );
+
+    return;
+
+  }
+
+
+  answered = true;
+
+
+  const selectedIndex =
+    Number(selected.value);
+
+
+  const optionElements =
+    document.querySelectorAll(
+      ".quiz-option"
+    );
+
+
+  if (
+    selectedIndex ===
+    currentQuestion.c
+  ) {
+
+    correctAnswers++;
+
+    quizScore +=
+      currentLevel * 10;
+
+
+    optionElements[selectedIndex]
+      .classList
+      .add("correct");
+
+
+    const feedback =
+      document.getElementById(
+        "quizFeedback"
+      );
+
+
+    feedback.className =
+      "quiz-feedback show good";
+
+
+    feedback.textContent =
+      "✓ Correct! " +
+      currentQuestion.e;
+
+
+    /*
+      Increase difficulty after
+      a correct answer.
+    */
+
+    if (currentLevel < 4) {
+
+      currentLevel++;
+
+    }
+
+
+  } else {
+
+    wrongAnswers++;
+
+
+    optionElements[selectedIndex]
+      .classList
+      .add("wrong");
+
+
+    optionElements[currentQuestion.c]
+      .classList
+      .add("correct");
+
+
+    const feedback =
+      document.getElementById(
+        "quizFeedback"
+      );
+
+
+    feedback.className =
+      "quiz-feedback show bad";
+
+
+    feedback.textContent =
+      "Not quite. " +
+      currentQuestion.e;
+
+
+    /*
+      A wrong answer lowers difficulty,
+      but never below Level 1.
+    */
+
+    if (currentLevel > 1) {
+
+      currentLevel--;
+
+    }
+
+  }
+
+
+  highestLevel =
+    Math.max(
+      highestLevel,
+      currentLevel
+    );
+
+
+  document
+    .querySelectorAll(
+      'input[name="quizAnswer"]'
+    )
+    .forEach(input => {
+
+      input.disabled = true;
+
+    });
+
+
+  document
+    .getElementById("quizScore")
+    .textContent =
+      `Score: ${quizScore}`;
+
+
+  document
+    .getElementById("answerBtn")
+    .style.display =
+      "none";
+
+
+  document
+    .getElementById("nextBtn")
+    .style.display =
+      "inline-block";
+
+}
+
+
+/* Next question */
+
+function nextQuestion() {
+
+  questionNumber++;
+
+
+  if (
+    questionNumber >=
+    QUESTIONS_PER_GAME
+  ) {
+
+    finishQuiz();
+
+    return;
+
+  }
+
+
+  loadQuestion();
+
+}
+
+
+/* Finish */
+
+function finishQuiz() {
+
+  document
+    .getElementById("quizContent")
+    .style.display =
+      "none";
+
+
+  document
+    .getElementById("quizResult")
+    .style.display =
+      "block";
+
+
+  document
+    .getElementById("progressBar")
+    .style.width =
+      "100%";
+
+
+  document
+    .getElementById("finalScore")
+    .textContent =
+      `${quizScore} points`;
+
+
+  document
+    .getElementById("correctCount")
+    .textContent =
+      correctAnswers;
+
+
+  document
+    .getElementById("wrongCount")
+    .textContent =
+      wrongAnswers;
+
+
+  document
+    .getElementById("highestLevel")
+    .textContent =
+      highestLevel;
+
+
+  let message;
+
+
+  if (highestLevel === 4 && correctAnswers >= 11) {
+
+    message =
+      "Excellent! You demonstrated strong health-science knowledge.";
+
+  } else if (highestLevel >= 3) {
+
+    message =
+      "Great work! You reached the advanced questions.";
+
+  } else if (correctAnswers >= 8) {
+
+    message =
+      "Good job! Keep practising to reach the advanced levels.";
+
+  } else {
+
+    message =
+      "Keep learning! Try another randomized quiz and improve your score.";
+
+  }
+
+
+  document
+    .getElementById("levelMessage")
+    .textContent =
+      message;
+
+}
+
+
+/* Restart */
+
+function restartQuiz() {
+
+  currentLevel = 1;
+
+  quizScore = 0;
+
+  correctAnswers = 0;
+
+  wrongAnswers = 0;
+
+  highestLevel = 1;
+
+  questionNumber = 0;
+
+  usedQuestions = [];
+
+
+  document
+    .getElementById("quizContent")
+    .style.display =
+      "block";
+
+
+  document
+    .getElementById("quizResult")
+    .style.display =
+      "none";
+
+
+  loadQuestion();
+
+}
+
+
+/* Start quiz */
+
+loadQuestion();
+
+
+/* =========================================================
+   DAILY HEALTH NOTICE DATABASE
+========================================================= */
+
+const healthNotices = [
+
+  {
+    category: "hygiene",
+    title: "Wash your hands regularly",
+    text: "Clean hands can help reduce the spread of many infections, especially before eating and after using the toilet."
+  },
+
+  {
+    category: "hygiene",
+    title: "Keep drinking water safe",
+    text: "Use a safe water source and follow local guidance when water safety is uncertain."
+  },
+
+  {
+    category: "hygiene",
+    title: "Keep food preparation areas clean",
+    text: "Clean surfaces and utensils can help reduce contamination during food preparation."
+  },
+
+  {
+    category: "hygiene",
+    title: "Protect food from contamination",
+    text: "Keep prepared food protected from insects, dirt and other possible sources of contamination."
+  },
+
+  {
+    category: "hygiene",
+    title: "Wash fresh produce appropriately",
+    text: "Follow safe food-handling practices when preparing fruits and vegetables."
+  },
+
+  {
+    category: "hygiene",
+    title: "Dispose of waste properly",
+    text: "Proper waste disposal helps communities maintain cleaner environments and can reduce some health risks."
+  },
+
+  {
+    category: "hygiene",
+    title: "Keep shared surfaces clean",
+    text: "Frequently touched surfaces should be cleaned appropriately, especially in shared environments."
+  },
+
+  {
+    category: "hygiene",
+    title: "Cover coughs and sneezes",
+    text: "Use appropriate respiratory hygiene when coughing or sneezing to help reduce spread of respiratory infections."
+  },
+
+  {
+    category: "nutrition",
+    title: "Choose a varied diet",
+    text: "Eating a variety of foods can help provide different nutrients needed for normal body functions."
+  },
+
+  {
+    category: "nutrition",
+    title: "Include vegetables and fruits",
+    text: "Vegetables and fruits can contribute vitamins, minerals and other useful nutrients to a balanced diet."
+  },
+
+  {
+    category: "nutrition",
+    title: "Remember hydration",
+    text: "Drink safe water regularly and pay attention to your body's fluid needs."
+  },
+
+  {
+    category: "nutrition",
+    title: "Do not rely on one food group",
+    text: "A balanced diet generally includes different food groups rather than relying on one type of food."
+  },
+
+  {
+    category: "nutrition",
+    title: "Store food safely",
+    text: "Appropriate food storage can help reduce contamination and foodborne illness."
+  },
+
+  {
+    category: "nutrition",
+    title: "Be careful with food after flooding",
+    text: "Food or drinking water contaminated by floodwater may pose health risks and should be handled according to official guidance."
+  },
+
+  {
+    category: "prevention",
+    title: "Use mosquito prevention measures",
+    text: "Follow recommended measures to reduce mosquito exposure, particularly in areas where mosquito-borne diseases occur."
+  },
+
+  {
+    category: "prevention",
+    title: "Learn about vaccination",
+    text: "Vaccination can protect against specific infections. Follow the vaccination schedule and guidance provided by qualified health professionals."
+  },
+
+  {
+    category: "prevention",
+    title: "Pay attention to public-health alerts",
+    text: "During outbreaks or emergencies, follow current instructions from Nigerian public-health authorities."
+  },
+
+  {
+    category: "prevention",
+    title: "Seek care when seriously unwell",
+    text: "Persistent, severe or concerning symptoms should be assessed by an appropriate healthcare professional."
+  },
+
+  {
+    category: "prevention",
+    title: "Do not ignore unusual symptoms",
+    text: "If you notice concerning changes in your health, seek appropriate professional advice rather than relying only on online information."
+  },
+
+  {
+    category: "prevention",
+    title: "Learn about local disease risks",
+    text: "Health risks can vary by location and season. Use reliable local public-health information."
+  },
+
+  {
+    category: "prevention",
+    title: "Use medicines responsibly",
+    text: "Medicines should be used appropriately and according to guidance from qualified healthcare professionals."
+  },
+
+  {
+    category: "prevention",
+    title: "Do not share medicines",
+    text: "A medicine prescribed or recommended for one person may not be appropriate for another person."
+  },
+
+  {
+    category: "prevention",
+    title: "Ask about preventive care",
+    text: "Healthcare professionals can advise on appropriate screening, vaccination and preventive services."
+  },
+
+  {
+    category: "wellness",
+    title: "Make time for sleep",
+    text: "Adequate sleep supports normal physical and mental functions."
+  },
+
+  {
+    category: "wellness",
+    title: "Stay physically active safely",
+    text: "Regular age-appropriate physical activity can support general health and wellbeing."
+  },
+
+  {
+    category: "wellness",
+    title: "Take breaks from long periods of sitting",
+    text: "Short movement breaks can be useful when spending long periods sitting or studying."
+  },
+
+  {
+    category: "wellness",
+    title: "Look after your mental wellbeing",
+    text: "Talking to a trusted person or qualified professional can be helpful when stress or emotional difficulties become hard to manage."
+  },
+
+  {
+    category: "wellness",
+    title: "Build healthy routines",
+    text: "Consistent routines around sleep, nutrition, activity and study can support general wellbeing."
+  },
+
+  {
+    category: "wellness",
+    title: "Spend time outdoors safely",
+    text: "Safe outdoor activity can provide opportunities for movement and fresh air while taking local environmental conditions into account."
+  },
+
+  {
+    category: "wellness",
+    title: "Stay connected",
+    text: "Positive relationships with trusted family members, friends, teachers or community members can support wellbeing."
+  },
+
+  {
+    category: "wellness",
+    title: "Balance study and rest",
+    text: "Regular breaks can make long study sessions more manageable."
+  },
+
+  {
+    category: "safety",
+    title: "Know where to get emergency help",
+    text: "Keep information about appropriate local emergency and healthcare services available."
+  },
+
+  {
+    category: "safety",
+    title: "Keep hazardous household products away from children",
+    text: "Potentially harmful household substances should be stored safely and according to their labels."
+  },
+
+  {
+    category: "safety",
+    title: "Use clean healthcare equipment",
+    text: "Healthcare equipment should be handled and maintained according to appropriate safety procedures."
+  },
+
+  {
+    category: "safety",
+    title: "Follow healthcare instructions",
+    text: "When receiving care, ask questions if instructions are unclear and follow guidance from qualified professionals."
+  },
+
+  {
+    category: "safety",
+    title: "Do not rely on social-media health claims",
+    text: "Check important health claims against reliable sources and qualified professionals."
+  },
+
+  {
+    category: "safety",
+    title: "Be cautious with online health information",
+    text: "Online information can be incomplete or outdated. Confirm important information with reliable health authorities."
+  },
+
+  {
+    category: "community",
+    title: "Protect vulnerable community members",
+    text: "Following appropriate infection-prevention measures can help protect people who may be more vulnerable to illness."
+  },
+
+  {
+    category: "community",
+    title: "Share reliable health information",
+    text: "Before forwarding a health message, check whether it comes from a trustworthy source."
+  },
+
+  {
+    category: "community",
+    title: "Report public-health concerns appropriately",
+    text: "Use official channels when reporting suspected outbreaks or important public-health concerns."
+  },
+
+  {
+    category: "community",
+    title: "Support health education",
+    text: "Learning basic health information can help people make better-informed decisions and know when to seek professional care."
+  },
+
+  {
+    category: "community",
+    title: "Learn basic first-aid information",
+    text: "Age-appropriate first-aid education can help people understand how to respond safely while professional help is being sought."
+  },
+
+  {
+    category: "community",
+    title: "Know your local healthcare options",
+    text: "Knowing nearby clinics, hospitals and appropriate healthcare services can make it easier to seek care when needed."
+  },
+
+  {
+    category: "community",
+    title: "Keep important health information accessible",
+    text: "Families can benefit from knowing relevant allergies, medications and emergency contacts when appropriate."
+  }
+
+];
+
+
+/* =========================================================
+   DAILY NOTICE RANDOMIZER
+========================================================= */
+
+/*
+  The date creates a seed.
+
+  This means:
+  - Same day = same 20 notices
+  - New day = different 20 notices
+
+  In a real production system, notices should
+  come from a reviewed database/API.
+*/
+
+
+function getDateKey() {
+
+  const now = new Date();
+
+  return (
+    now.getFullYear() +
+    "-" +
+    String(now.getMonth()+1).padStart(2,"0") +
+    "-" +
+    String(now.getDate()).padStart(2,"0")
+  );
+
+}
+
+
+/* Seeded random */
+
+function seededRandom(seed) {
+
+  let x = Math.sin(seed++) * 10000;
+
+  return x - Math.floor(x);
+
+}
+
+
+/* Generate number from date */
+
+function dateSeed() {
+
+  const key =
+    getDateKey();
+
+  let total = 0;
+
+  for (
+    let i = 0;
+    i < key.length;
+    i++
+  ) {
+
+    total =
+      ((total << 5) -
+      total) +
+      key.charCodeAt(i);
+
+    total |= 0;
+
+  }
+
+  return Math.abs(total);
+
+}
+
+
+/* Shuffle */
+
+function seededShuffle(array, seed) {
+
+  const result =
+    [...array];
+
+  let currentSeed =
+    seed;
+
+
+  for (
+    let i = result.length - 1;
+    i > 0;
+    i--
+  ) {
+
+    const random =
+      seededRandom(currentSeed++);
+
+    const j =
+      Math.floor(random * (i + 1));
+
+
+    [
+      result[i],
+      result[j]
+    ] =
+    [
+      result[j],
+      result[i]
+    ];
+
+  }
+
+
+  return result;
+
+}
+
+
+/* Display notices */
+
+function displayDailyNotices() {
+
+  const seed =
+    dateSeed();
+
+
+  const shuffled =
+    seededShuffle(
+      healthNotices,
+      seed
+    );
+
+
+  /*
+    Exactly 20 notices per day.
+  */
+
+  const todaysNotices =
+    shuffled.slice(0,20);
+
+
+  const grid =
+    document.getElementById(
+      "noticeGrid"
+    );
+
+
+  grid.innerHTML = "";
+
+
+  todaysNotices.forEach(
+    (notice,index) => {
+
+      const article =
+        document.createElement(
+          "article"
+        );
+
+
+      article.className =
+        "notice";
+
+
+      article.dataset.category =
+        notice.category;
+
+
+      article.dataset.text =
+        (
+          notice.title +
+          " " +
+          notice.text
+        ).toLowerCase();
+
+
+      article.innerHTML = `
+
+        <span class="notice-category">
+          ${notice.category.toUpperCase()}
+        </span>
+
+        <h3>
+          ${index + 1}.
+          ${notice.title}
+        </h3>
+
+        <p>
+          ${notice.text}
+        </p>
+
+      `;
+
+
+      grid.appendChild(article);
+
+    }
+  );
+
+
+  const date =
+    new Date();
+
+
+  const formatted =
+    date.toLocaleDateString(
+      "en-NG",
+      {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      }
+    );
+
+
+  document
+    .getElementById("noticeDate")
+    .textContent =
+      `📅 Today's health notices — ${formatted}`;
+
+}
+
+
+/* Filter notices */
+
+function filterNotices() {
+
+  const query =
+    document
+      .getElementById(
+        "noticeSearch"
+      )
+      .value
+      .toLowerCase()
+      .trim();
+
+
+  const category =
+    document
+      .getElementById(
+        "noticeCategory"
+      )
+      .value;
+
+
+  const notices =
+    document.querySelectorAll(
+      "#noticeGrid .notice"
+    );
+
+
+  let visible = 0;
+
+
+  notices.forEach(notice => {
+
+    const matchesText =
+      notice.dataset.text
+        .includes(query);
+
+
+    const matchesCategory =
+      category === "all" ||
+      notice.dataset.category === category;
+
+
+    if (
+      matchesText &&
+      matchesCategory
+    ) {
+
+      notice.classList.remove("hidden");
+
+      visible++;
+
+    } else {
+
+      notice.classList.add("hidden");
+
+    }
+
+  });
+
+
+  document
+    .getElementById("noticeEmpty")
+    .style.display =
+      visible === 0
+        ? "block"
+        : "none";
+
+}
+
+
+/* Start daily notices */
+
+displayDailyNotices();
+
+
+/* =========================================================
+   CHECK FOR A NEW DAY WHILE PAGE IS OPEN
+========================================================= */
+
+let loadedDate =
+  getDateKey();
+
+
+setInterval(
+  function() {
+
+    const currentDate =
+      getDateKey();
+
+
+    if (
+      currentDate !==
+      loadedDate
+    ) {
+
+      loadedDate =
+        currentDate;
+
+
+      displayDailyNotices();
+
+
+      document
+        .getElementById(
+          "noticeSearch"
+        )
+        .value = "";
+
+
+      document
+        .getElementById(
+          "noticeCategory"
+        )
+        .value = "all";
+
+    }
+
+  },
+  60000
+);
+
+</script>
+
+</body>
+</html>
+```
